@@ -187,22 +187,6 @@
             /* margin-left: auto; */
             padding: 3px 10px;
             border-radius: 6px;
-            background: #6c757d;
-            color: white;
-            font-size: 0.85em;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s ease;
-        }
-        
-        .slide-link:hover {
-            background: #5a6268;
-        }
-
-        .certificate-link {
-            margin-left: auto;
-            padding: 3px 10px;
-            border-radius: 6px;
             background: #8d6e63;
             color: white;
             font-size: 0.85em;
@@ -211,8 +195,24 @@
             transition: background 0.2s ease;
         }
         
-        .certificate-link:hover {
+        .slide-link:hover {
             background: #6d4c41;
+        }
+
+        .certificate-link {
+            margin-left: auto;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: #6c757d;
+            color: white;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        
+        .certificate-link:hover {
+            background: #5a6268;
         }
 
         /* 모바일 최적화 (반응형 셋팅) */
@@ -304,9 +304,18 @@
                 <p>I am interested in co-optimizing hardware and algorithms to design low-latency, energy-efficient computing systems for AI and data-intensive applications. My research focuses on the following topics:</p>
 
                 <!-- 세부 연구 주제 레이아웃 -->
-                <div style="margin-top: 25px; background: #fff; border: 1px solid #eef0f2; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                <div style="
+                    margin-top: 25px;
+                    padding: 22px 24px;
+                    background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+                    border: 1px solid #e8ebef;
+                    border-radius: 14px;
+                    box-shadow:
+                        0 10px 25px rgba(0,0,0,0.05),
+                        0 2px 6px rgba(0,0,0,0.03);
+                ">
                     <h3 style="margin-top: 0; font-size: 16px; color: #111; border-left: 4px solid #e60000; padding-left: 10px; margin-bottom: 15px;">Research Interests</h3>
-                    
+                
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         <!-- 주제 1 -->
                         <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
@@ -316,7 +325,7 @@
                                 <span style="color: #555; font-size: 14px;">Quantization, Algorithm Restructuring</span>
                             </div>
                         </li>
-                        
+                
                         <!-- 주제 2 -->
                         <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
                             <span style="color: #e60000; margin-right: 10px; font-weight: bold;">•</span>
@@ -325,7 +334,7 @@
                                 <span style="color: #555; font-size: 14px;">RTL Design for AI/Vector Search Acceleration</span>
                             </div>
                         </li>
-                        
+                
                         <!-- 주제 3 -->
                         <li style="margin-bottom: 0; display: flex; align-items: flex-start;">
                             <span style="color: #e60000; margin-right: 10px; font-weight: bold;">•</span>
