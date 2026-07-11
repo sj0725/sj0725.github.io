@@ -170,6 +170,42 @@
                 text-align: center;
             }
         }
+
+        /* 학력 섹션 스타일 */
+        .edu-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .edu-details {
+            flex: 1;
+        }
+        
+        .edu-degree {
+            font-weight: bold;
+            font-size: 16px;
+            color: #111;
+        }
+        
+        .edu-school {
+            font-size: 15px;
+            color: #555;
+        }
+        
+        .edu-date {
+            font-size: 14px;
+            color: #666;
+            text-align: right;
+            white-space: nowrap;
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -181,7 +217,7 @@
             <!-- 프로필 사진 (같은 폴더에 내 사진을 profile.jpg 명으로 올리면 나옵니다) -->
             <img src="sjcho.jpg" alt="Profile Picture" class="profile-img">
             <h1>Seongjoon Cho</h1>
-            <div class="sub-title">Master Student in Kyung Hee University</div>
+            <div class="sub-title">Master Student <br> in Kyung Hee University</div>
             
             <ul class="contact-links">
                 <li>📧 이메일: <a href="mailto:csj0725@khu.ac.kr">csj0725@khu.ac.kr</a></li>
@@ -196,8 +232,34 @@
             <!-- 자기소개 섹션 -->
             <section id="about">
                 <h2>About Me</h2>
-                <p>안녕하세요! 저는 홍길동대학교 AI 연구실에서 비전 및 멀티모달 학습을 연구하고 있는 홍길동입니다. 인공지능이 인간의 행동을 보다 직관적으로 이해할 수 있도록 돕는 연구에 깊은 흥미를 느끼고 있습니다.</p>
-                <p>다양한 산학 연구 및 오픈소스 협업에 열려 있으니, 협업 제안은 언제든 이메일로 연락해 주세요! 🚀</p>
+                <p>Welcome to my homepage! I am a Master's student in the Department of Semiconductor Engineering at Kyung Hee University.</p>
+                <p>My research focuses on co-optimizing hardware and algorithms to design low-latency, energy-efficient computing systems for AI and data-intensive applications.</p>
+            </section>
+
+            <!-- 학력 섹션 -->
+            <section id="education">
+                <h2>Education</h2>
+                <ul class="edu-list">
+                    
+                    <!-- 석사 과정 -->
+                    <li class="edu-item">
+                        <div class="edu-details">
+                            <div class="edu-degree">M.S. in Semiconductor Engineering</div>
+                            <div class="edu-school">Kyung Hee University, South Korea</div>
+                        </div>
+                        <div class="edu-date">Sep. 2024 - Aug. 2026</div>
+                    </li>
+            
+                    <!-- 학사 과정 (예시이므로 본인의 정보로 변경하세요) -->
+                    <li class="edu-item">
+                        <div class="edu-details">
+                            <div class="edu-degree">B.S. in Electronic Engineering (또는 본인 학사 전공)</div>
+                            <div class="edu-school">Kyung Hee University, South Korea (또는 본인 출신 대학)</div>
+                        </div>
+                        <div class="edu-date">Mar. 2018 - Feb. 2024</div>
+                    </li>
+            
+                </ul>
             </section>
 
             <!-- 새 소식 섹션 -->
