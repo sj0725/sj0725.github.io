@@ -1,40 +1,247 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>나를 소개합니다</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 600px;
-      margin: 80px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 10px;
-    }
-    p {
-      line-height: 1.6;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 연구/포트폴리오 홈페이지</title>
+    <style>
+        /* 전체 기본 스타일 설정 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fafafa;
+        }
+
+        /* 2단 레이아웃 구성을 위한 컨테이너 */
+        .container {
+            display: flex;
+            gap: 50px;
+        }
+
+        /* 왼쪽 사이드바 (프로필 영역) */
+        .sidebar {
+            flex: 1;
+            max-width: 260px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 15px;
+        }
+
+        .sidebar h1 {
+            font-size: 24px;
+            margin: 10px 0 5px 0;
+        }
+
+        .sidebar .sub-title {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            list-style: none;
+            padding: 0;
+            font-size: 14px;
+            text-align: left;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .contact-links li {
+            margin-bottom: 8px;
+        }
+
+        .contact-links a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* 오른쪽 본문 내용 영역 */
+        .main-content {
+            flex: 3;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 22px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        /* 뉴스 섹션 스타일 */
+        .news-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .news-list li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .news-date {
+            font-weight: bold;
+            color: #0066cc;
+            margin-right: 10px;
+        }
+
+        /* 논문(포트폴리오) 목록 스타일 */
+        .pub-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .pub-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: #111;
+            margin: 0 0 5px 0;
+        }
+
+        .pub-authors {
+            font-size: 15px;
+            color: #444;
+            margin: 0 0 3px 0;
+        }
+
+        .pub-authors .me {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .pub-venue {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin: 0 0 8px 0;
+        }
+
+        /* 논문 링크 버튼 스타일 */
+        .badge-links a {
+            display: inline-block;
+            font-size: 12px;
+            padding: 2px 8px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 5px;
+            border: 1px solid #ddd;
+            transition: 0.2s;
+        }
+
+        .badge-links a:hover {
+            background-color: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+        /* 모바일 최적화 (반응형 셋팅) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .sidebar {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            .contact-links {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>안녕하세요 👋</h1>
-    <p>저는 jbs371입니다.</p>
-    <p>이곳은 저를 소개하는 개인 홈페이지입니다.</p>
-    <p>관심사: 개발, 공부, 기록</p>
-    <p>이메일: example@email.com</p>
-  </div>
+
+    <div class="container">
+        
+        <!-- 왼쪽 사이드바 (내 프로필) -->
+        <div class="sidebar">
+            <!-- 프로필 사진 (같은 폴더에 내 사진을 profile.jpg 명으로 올리면 나옵니다) -->
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <h1>홍 길 동</h1>
+            <div class="sub-title">홍길동 대학교 석사과정 연구원</div>
+            
+            <ul class="contact-links">
+                <li>📧 이메일: <a href="mailto:your_email@gmail.com">your_email@gmail.com</a></li>
+                <li>🐙 GitHub: <a href="https://github.com/내아이디" target="_blank">@내아이디</a></li>
+                <li>💼 LinkedIn: <a href="https://linkedin.com/in/내주소" target="_blank">프로필 링크</a></li>
+                <li>📝 Google Scholar: <a href="#" target="_blank">학술 페이지</a></li>
+            </ul>
+        </div>
+
+        <!-- 오른쪽 본문 내용 -->
+        <div class="main-content">
+            
+            <!-- 자기소개 섹션 -->
+            <section id="about">
+                <h2>About Me</h2>
+                <p>안녕하세요! 저는 홍길동대학교 AI 연구실에서 비전 및 멀티모달 학습을 연구하고 있는 홍길동입니다. 인공지능이 인간의 행동을 보다 직관적으로 이해할 수 있도록 돕는 연구에 깊은 흥미를 느끼고 있습니다.</p>
+                <p>다양한 산학 연구 및 오픈소스 협업에 열려 있으니, 협업 제안은 언제든 이메일로 연락해 주세요! 🚀</p>
+            </section>
+
+            <!-- 새 소식 섹션 -->
+            <section id="news">
+                <h2>News</h2>
+                <ul class="news-list">
+                    <li><span class="news-date">[2026. 07]</span> 대표 학회 CVPR 2026에 논문이 한 채택되었습니다! 🎉</li>
+                    <li><span class="news-date">[2026. 03]</span> 네이버 웹툰 AI 인턴십 연구원으로 출근을 시작했습니다.</li>
+                    <li><span class="news-date">[2025. 11]</span> 인공지능 경진대회에서 우수상을 수상하였습니다.</li>
+                </ul>
+            </section>
+
+            <!-- 대표 연구/프로젝트 섹션 -->
+            <section id="publications">
+                <h2>Publications</h2>
+                
+                <!-- 첫 번째 논문 아이템 -->
+                <div class="pub-item">
+                    <p class="pub-title">멋진 인공지능 모델을 활용한 비디오 행동 인식 기술 연구</p>
+                    <p class="pub-authors"><span class="me">Gildong Hong</span>, Wooil Lee, Jinwoo Choi</p>
+                    <p class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026</p>
+                    <div class="badge-links">
+                        <a href="#" target="_blank">[Paper]</a>
+                        <a href="#" target="_blank">[Code]</a>
+                        <a href="#" target="_blank">[Project Page]</a>
+                    </div>
+                </div>
+
+                <!-- 두 번째 논문 아이템 -->
+                <div class="pub-item">
+                    <p class="pub-title">효율적인 데이터 처리를 위한 크로스 어텐션 메커니즘 분석</p>
+                    <p class="pub-authors">Chulsoo Kim*, <span class="me">Gildong Hong*</span>, Jinwoo Choi (*: 동등 기여)</p>
+                    <p class="pub-venue">Neural Information Processing Systems (NeurIPS), 2025</p>
+                    <div class="badge-links">
+                        <a href="#" target="_blank">[Paper]</a>
+                        <a href="#" target="_blank">[Code]</a>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+
 </body>
 </html>
-출처: https://recording-it.tistory.com/127 [나를 위한 꾸준한 기록 - 다시개발:티스토리]
