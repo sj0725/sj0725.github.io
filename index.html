@@ -130,10 +130,40 @@
         }
 
         .pub-venue {
+            display: flex;
+            align-items: center;
+            
             font-size: 14px;
             color: #444;
             font-style: italic;
             margin: 0 0 8px 0;
+        }
+
+        .pub-badge {
+            margin-left: 10px;
+            padding: 2px 8px;
+            background: #f3f4f6;
+            border: 1px solid #d8d8d8;
+            border-radius: 999px;
+            font-size: 0.87em;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .paper-link {
+            margin-left: auto;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: #222;
+            color: white;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .paper-link:hover {
+            background: #444;
         }
 
         /* 논문 링크 버튼 스타일 */
