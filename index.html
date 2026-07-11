@@ -205,36 +205,36 @@
         .edu-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         
         .edu-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
+            margin-bottom: 28px;
         }
         
         .edu-details {
-            flex: 1;
-        }
-        
-        .edu-degree {
-            font-weight: bold;
-            font-size: 16px;
-            color: #111;
-        }
-        
-        .edu-school {
-            font-size: 15px;
-            color: #555;
+            margin-left: 0;
         }
         
         .edu-date {
-            font-size: 14px;
+            font-size: 15px;
             color: #666;
-            text-align: right;
-            white-space: nowrap;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .edu-degree {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111;
             margin-left: 20px;
+        }
+        
+        .edu-gpa {
+            font-size: 14px;
+            color: #888;
+            margin-left: 20px;
+            margin-top: 3px;
         }
     </style>
 </head>
@@ -308,24 +308,35 @@
             <!-- 학력 섹션 -->
             <section id="education">
                 <h2>Education</h2>
+            
                 <ul class="edu-list">
-                    
-                    <!-- 석사 과정 -->
+            
                     <li class="edu-item">
                         <div class="edu-details">
-                            <div class="edu-degree">M.S. in Semiconductor Engineering</div>
-                            <div class="edu-school">Kyung Hee University, South Korea (GPA: 4.34/4.5)</div>
+                            <div class="edu-date">Sep. 2024 – Aug. 2026</div>
+            
+                            <div class="edu-degree">
+                                M.S. in Semiconductor Engineering, Kyung Hee University, Yongin, South Korea
+                            </div>
+            
+                            <div class="edu-gpa">
+                                GPA: 4.34 / 4.50
+                            </div>
                         </div>
-                        <div class="edu-date">Sep. 2024 - Aug. 2026</div>
                     </li>
             
-                    <!-- 학사 과정 (예시이므로 본인의 정보로 변경하세요) -->
                     <li class="edu-item">
                         <div class="edu-details">
-                            <div class="edu-degree">B.S. in Electronic Engineering</div>
-                            <div class="edu-school">Kyung Hee University, South Korea (GPA: 4.21/4.5)</div>
+                            <div class="edu-date">Mar. 2018 – Feb. 2024</div>
+            
+                            <div class="edu-degree">
+                                B.S. in Electronic Engineering, Kyung Hee University, Yongin, South Korea
+                            </div>
+            
+                            <div class="edu-gpa">
+                                GPA: 4.21 / 4.50
+                            </div>
                         </div>
-                        <div class="edu-date">Mar. 2018 - Feb. 2024</div>
                     </li>
             
                 </ul>
