@@ -177,24 +177,36 @@
             background: #444;
         }
 
-        /* 논문 링크 버튼 스타일 */
-        .badge-links a {
-            display: inline-block;
-            font-size: 12px;
-            padding: 2px 8px;
-            background-color: #f0f0f0;
-            color: #333;
+        .slide-link {
+            margin-left: auto;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: #6c757d;
+            color: white;
+            font-size: 0.85em;
+            font-weight: 600;
             text-decoration: none;
-            border-radius: 4px;
-            margin-right: 5px;
-            border: 1px solid #ddd;
-            transition: 0.2s;
+            transition: background 0.2s ease;
+        }
+        
+        .slide-link:hover {
+            background: #5a6268;
         }
 
-        .badge-links a:hover {
-            background-color: #333;
-            color: #fff;
-            border-color: #333;
+        .certificate-link {
+            margin-left: auto;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: #2a9d8f;
+            color: white;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        
+        .certificate-link:hover {
+            background: #23867a;
         }
 
         /* 모바일 최적화 (반응형 셋팅) */
@@ -465,11 +477,19 @@
                             Acceptance Ratio=22.3%
                         </span>
                 
-                        <a class="paper-link"
-                           href="https://dac.com/2026/program"
-                           target="_blank">
-                            Paper
-                        </a>
+                        <span class="pub-links">
+                            <a class="paper-link"
+                               href="https://dac.com/2026/program"
+                               target="_blank">
+                                Paper
+                            </a>
+                    
+                            <a class="slide-link"
+                               href="1560FINAL.pdf"
+                               target="_blank">
+                                Slides
+                            </a>
+                        </span>
                     </p>
                 
                 </div>
@@ -542,7 +562,7 @@
                     <p class="pub-venue">
                         <span>Autumn Annual Conference of Institute of Electronics and Information Engineers (IEIE), 2025</span>
 
-                        <a class="paper-link"
+                        <a class="certificate-link"
                            href="Outstanding Paper Award.pdf"
                            target="_blank">
                             Certificate
