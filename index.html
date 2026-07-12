@@ -381,10 +381,26 @@
         .research-description {
             position: relative;
             z-index: 1;
-            display: block;
+            margin: 0;
+            padding: 0;
             color: #111111;
             font-size: 13.5px;
             line-height: 1.6;
+            list-style: none;
+        }
+
+        .research-description li {
+            position: relative;
+            padding-left: 13px;
+        }
+
+        .research-description li::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: var(--color-primary);
+            content: "•";
+            font-weight: 700;
         }
 
         /* Education timeline */
@@ -477,10 +493,10 @@
             gap: 12px;
             margin: 0 0 15px;
             color: var(--color-primary);
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
             font-size: 18px;
-            font-weight: 600;
-            letter-spacing: 0.01em;
+            font-weight: 700;
+            letter-spacing: 0.005em;
             line-height: 1.4;
             text-transform: none;
         }
@@ -771,7 +787,7 @@
             }
 
             .publication-group-title {
-                font-size: 12.5px;
+                font-size: 14px;
                 letter-spacing: 0;
             }
         }
@@ -882,9 +898,10 @@
                                 <strong class="research-topic">
                                     Hardware-Friendly Algorithm Optimization
                                 </strong>
-                                <span class="research-description">
-                                    Quantization, Algorithm Restructuring
-                                </span>
+                                <ul class="research-description">
+                                    <li>Quantization</li>
+                                    <li>Algorithm Restructuring</li>
+                                </ul>
                             </div>
                         </li>
 
@@ -894,9 +911,9 @@
                                 <strong class="research-topic">
                                     Specialized Hardware Accelerators
                                 </strong>
-                                <span class="research-description">
-                                    RTL Design for AI/Vector Search Acceleration
-                                </span>
+                                <ul class="research-description">
+                                    <li>RTL Design for AI/Vector Search Acceleration</li>
+                                </ul>
                             </div>
                         </li>
 
@@ -906,9 +923,11 @@
                                 <strong class="research-topic">
                                     Memory-Centric Architectures
                                 </strong>
-                                <span class="research-description">
-                                    Compute Express Link (CXL), Processing Near-Memory (PNM), In-Storage Processing (ISP)
-                                </span>
+                                <ul class="research-description">
+                                    <li>Compute Express Link (CXL)</li>
+                                    <li>Processing Near-Memory</li>
+                                    <li>In-Storage Processing</li>
+                                </ul>
                             </div>
                         </li>
                     </ul>
