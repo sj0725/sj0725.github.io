@@ -126,6 +126,7 @@
             margin: 0;
             color: var(--color-muted);
             font-size: 14px;
+            font-weight: 600;
             line-height: 1.55;
         }
 
@@ -434,7 +435,7 @@
             gap: 12px;
             margin: 0 0 15px;
             color: var(--color-primary);
-            font-size: 12.5px;
+            font-size: 14px;
             font-weight: 800;
             letter-spacing: 0.105em;
             line-height: 1.4;
@@ -495,11 +496,8 @@
 
         .publication-authors .me {
             color: var(--color-primary);
-            font-weight: 800;
-            text-decoration-line: underline;
-            text-decoration-color: var(--color-primary);
-            text-decoration-thickness: 1.5px;
-            text-underline-offset: 3px;
+            font-weight: inherit;
+            text-decoration: none;
         }
 
         .publication-meta {
@@ -513,6 +511,14 @@
             line-height: 1.5;
         }
 
+        .publication-info {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+        }
+
         .publication-venue {
             min-width: 0;
             padding: 1px 0 1px 8px;
@@ -520,6 +526,15 @@
             color: #5f6f80;
             font-weight: 600;
             letter-spacing: -0.003em;
+        }
+
+        .publication-note {
+            margin-left: 10px;
+            color: #7b8797;
+            font-size: 11.5px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.4;
         }
 
         .publication-badge {
@@ -593,6 +608,10 @@
 
         .action-link--certificate {
             margin-left: auto;
+        }
+
+        #honors-awards .publication-authors {
+            color: #5f6f80;
         }
 
         #honors-awards .publication-item {
@@ -702,7 +721,7 @@
             }
 
             .publication-group-title {
-                font-size: 11.5px;
+                font-size: 12.5px;
                 letter-spacing: 0.08em;
             }
         }
@@ -735,7 +754,7 @@
             <h1 class="profile-name">Seongjoon Cho</h1>
         
             <div class="profile-subtitle">
-                Master Student <br>
+                M.S. Student <br>
                 in Kyung Hee University
             </div>
         
@@ -906,12 +925,24 @@
                         </p>
 
                         <p class="publication-meta">
-                            <span class="publication-venue">
-                                45th IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2026
+                            <span class="publication-info">
+
+                                <span class="publication-venue">
+
+                                    45th IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2026
+
+                                </span>
+
+                                <span class="publication-note">
+
+                                    Accepted
+
+                                </span>
+
                             </span>
 
                             <span class="publication-badge publication-badge--conference">
-                                Accepted
+                                Top-Tier
                             </span>
                         </p>
                     </article>
@@ -928,12 +959,22 @@
                         </p>
 
                         <p class="publication-meta">
-                            <span class="publication-venue">
-                                45th IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2026
+                            <span class="publication-info">
+
+                                <span class="publication-venue">
+
+                                    45th IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2026
+
+                                </span>
+
+                                <span class="publication-note">
+                                    Accepted
+                                </span>
+
                             </span>
 
                             <span class="publication-badge publication-badge--conference">
-                                Accepted
+                                Top-Tier
                             </span>
                         </p>
                     </article>
@@ -950,12 +991,21 @@
                         </p>
 
                         <p class="publication-meta">
-                            <span class="publication-venue">
-                                63rd ACM/IEEE Design Automation Conference (DAC), 2026
+                            <span class="publication-info">
+
+                                <span class="publication-venue">
+
+                                    63rd ACM/IEEE Design Automation Conference (DAC), 2026
+
+                                </span>
+                                <span class="publication-note">
+                                    Acceptance Ratio=22.3%
+                                </span>
+
                             </span>
 
                             <span class="publication-badge publication-badge--conference">
-                                Acceptance Ratio=22.3%
+                                Top-Tier
                             </span>
 
                             <span class="publication-actions">
@@ -997,8 +1047,14 @@
                         </p>
 
                         <p class="publication-meta">
-                            <span class="publication-venue">
-                                Journal of Systems Architecture (JSA), 2026
+                            <span class="publication-info">
+
+                                <span class="publication-venue">
+
+                                    Journal of Systems Architecture (JSA), 2026
+
+                                </span>
+
                             </span>
 
                             <span class="publication-badge publication-badge--journal">
@@ -1030,8 +1086,14 @@
                         </p>
 
                         <p class="publication-meta">
-                            <span class="publication-venue">
-                                IEEE Transactions on Computers (TC), 2026
+                            <span class="publication-info">
+
+                                <span class="publication-venue">
+
+                                    IEEE Transactions on Computers (TC), 2026
+
+                                </span>
+
                             </span>
 
                             <span class="publication-badge publication-badge--journal">
@@ -1068,12 +1130,22 @@
                         </p>
 
                         <p class="publication-meta">
-                            <span class="publication-venue">
-                                Autumn Annual Conference of Institute of Electronics and Information Engineers (IEIE), 2025
-                            </span>
+                            <span class="publication-info">
 
-                            <span class="publication-badge publication-badge--conference">
-                                Outstanding Paper
+                                <span class="publication-venue">
+
+                                    Autumn Annual Conference of Institute of Electronics and Information Engineers (IEIE), 2025
+
+                                </span>
+
+                                Optional additional information:
+
+                                <span class="publication-note">
+
+                                    Outstanding Student Paper Award
+
+                                </span>
+
                             </span>
 
                             <span class="publication-actions">
