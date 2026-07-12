@@ -4,598 +4,731 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seongjoon Cho</title>
+
     <style>
-        /* 전체 기본 스타일 설정 */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #fafafa;
+        :root {
+            --color-background: #fafafa;
+            --color-surface: #ffffff;
+            --color-text: #333333;
+            --color-heading: #111111;
+            --color-muted: #666666;
+            --color-subtle: #777777;
+            --color-link: #0066cc;
+            --color-primary: #1e3a8a;
+            --color-accent: #e60000;
+            --color-border: #eeeeee;
+            --color-card-border: #d8dde3;
+
+            --color-paper: #222222;
+            --color-paper-hover: #444444;
+            --color-slides: #8d6e63;
+            --color-slides-hover: #6d4c41;
+            --color-certificate: #6c757d;
+            --color-certificate-hover: #5a6268;
+
+            --color-journal-bg: #fff3e6;
+            --color-journal-border: #ffd8a8;
+            --color-journal-text: #9a5b00;
+            --color-conference-bg: #fdecec;
+            --color-conference-border: #f3b4b4;
+            --color-conference-text: #b42318;
+
+            --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Helvetica, Arial, sans-serif;
         }
 
-        /* 2단 레이아웃 구성을 위한 컨테이너 */
-        .container {
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            font-family: var(--font-system);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--color-link);
+        }
+
+        .page-layout {
             display: flex;
             gap: 50px;
         }
 
-        /* 왼쪽 사이드바 (프로필 영역) */
         .sidebar {
             flex: 1;
             max-width: 260px;
             text-align: center;
         }
 
-        .profile-img {
+        .profile-image {
+            display: block;
             width: 100%;
             max-width: 220px;
+            margin: 0 auto 15px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .sidebar h1 {
+        .profile-name {
+            margin: 10px 0 5px;
             font-size: 24px;
-            margin: 10px 0 5px 0;
         }
 
-        .sidebar .sub-title {
-            color: #666;
-            font-size: 15px;
+        .profile-subtitle {
             margin-bottom: 20px;
+            color: var(--color-muted);
+            font-size: 15px;
         }
 
-        .contact-links {
-            list-style: none;
-            padding: 0;
+        .contact-list {
+            margin: 0;
+            padding: 15px 0 0;
+            border-top: 1px solid var(--color-border);
             font-size: 14px;
+            list-style: none;
             text-align: left;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
         }
 
-        .contact-links li {
+        .contact-list li {
             margin-bottom: 8px;
         }
 
-        .contact-links a {
-            color: #0066cc;
+        .contact-list a {
             text-decoration: none;
         }
 
-        .contact-links a:hover {
+        .contact-list a:hover {
             text-decoration: underline;
         }
 
-        /* 오른쪽 본문 내용 영역 */
         .main-content {
             flex: 3;
+            min-width: 0;
         }
 
-        section {
+        .content-section {
             margin-bottom: 40px;
         }
 
-        h2 {
-            font-size: 22px;
-            border-bottom: 2px solid #333;
+        .section-title {
+            margin: 0 0 15px;
             padding-bottom: 5px;
-            margin-bottom: 15px;
-            color: #111;
+            border-bottom: 2px solid var(--color-text);
+            color: var(--color-primary);
+            font-size: 22px;
         }
 
-        /* 뉴스 섹션 스타일 */
-        .news-list {
-            list-style: none;
+        .lab-link {
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .research-card {
+            margin-top: 25px;
+            padding: 22px 24px;
+            border: 1px solid var(--color-card-border);
+            border-radius: 14px;
+            background: linear-gradient(
+                145deg,
+                var(--color-surface) 0%,
+                #fafbfc 100%
+            );
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.08),
+                0 3px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .research-card-title {
+            margin: 0 0 15px;
+            padding-left: 10px;
+            border-left: 4px solid var(--color-accent);
+            color: var(--color-heading);
+            font-size: 16px;
+        }
+
+        .research-list {
+            margin: 0;
             padding: 0;
+            list-style: none;
         }
 
-        .news-list li {
-            margin-bottom: 10px;
+        .research-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .research-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-bullet {
+            margin-right: 10px;
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        .research-topic {
+            display: block;
+            color: var(--color-heading);
             font-size: 15px;
         }
 
-        .news-date {
-            font-weight: bold;
-            color: #0066cc;
-            margin-right: 10px;
+        .research-description {
+            color: #555555;
+            font-size: 14px;
         }
 
-        /* 논문(포트폴리오) 목록 스타일 */
-        .pub-item {
+        .education-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .education-item {
+            margin-bottom: 28px;
+        }
+
+        .education-date {
+            margin-bottom: 8px;
+            color: var(--color-muted);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .education-degree {
+            margin-left: 20px;
+            color: var(--color-heading);
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .education-location {
+            color: var(--color-subtle);
+            font-size: 0.95em;
+        }
+
+        .education-gpa {
+            margin-top: 3px;
+            margin-left: 20px;
+            color: var(--color-muted);
+            font-size: 14px;
+        }
+
+        .publication-item {
             margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 1px dashed #eee;
+            border-bottom: 1px dashed var(--color-border);
         }
 
-        .pub-title {
+        .publication-title {
+            margin: 0 0 5px;
+            color: var(--color-heading);
             font-size: 17px;
-            font-weight: bold;
-            color: #111;
-            margin: 0 0 5px 0;
+            font-weight: 700;
         }
 
-        .pub-authors {
+        .publication-authors {
+            margin: 0 0 3px;
+            color: #444444;
             font-size: 15px;
-            color: #444;
-            margin: 0 0 3px 0;
         }
 
-        .pub-authors .me {
-            font-weight: bold;
+        .publication-authors .me {
+            font-weight: 700;
             text-decoration: underline;
         }
 
-        .pub-venue {
+        .publication-meta {
             display: flex;
             align-items: center;
-            
+            margin: 0 0 8px;
+            color: #444444;
             font-size: 14px;
-            color: #444;
             font-style: italic;
-            margin: 0 0 8px 0;
         }
 
-        .pub-badge {
+        .publication-venue {
+            min-width: 0;
+        }
+
+        .publication-badge {
+            flex: 0 0 auto;
             margin-left: 10px;
             padding: 2px 8px;
+            border: 1px solid;
             border-radius: 999px;
             font-size: 0.87em;
             font-weight: 600;
+            white-space: nowrap;
         }
 
-        /* Journal (Gold) */
-        .pub-badge-journal {
-            background: #fff3e6;
-            border: 1px solid #ffd8a8;
-            color: #9a5b00;
+        .publication-badge--journal {
+            border-color: var(--color-journal-border);
+            background-color: var(--color-journal-bg);
+            color: var(--color-journal-text);
         }
-        
-        /* Conference (Light Red) */
-        .pub-badge-conf {
-            background: #fdecec;
-            border: 1px solid #f3b4b4;
-            color: #b42318;
+
+        .publication-badge--conference {
+            border-color: var(--color-conference-border);
+            background-color: var(--color-conference-bg);
+            color: var(--color-conference-text);
         }
-        
-        .pub-links {
-            margin-left: auto;
+
+        .publication-actions {
             display: flex;
+            flex: 0 0 auto;
             gap: 6px;
-        }
-        
-        .paper-link {
-            /* margin-left: auto; */
-            padding: 3px 10px;
-            border-radius: 6px;
-            background: #222;
-            color: white;
-            font-size: 0.85em;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s ease;
-        }
-        
-        .paper-link:hover {
-            background: #444;
-        }
-
-        .slide-link {
-            /* margin-left: auto; */
-            padding: 3px 10px;
-            border-radius: 6px;
-            background: #8d6e63;
-            color: white;
-            font-size: 0.85em;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s ease;
-        }
-        
-        .slide-link:hover {
-            background: #6d4c41;
-        }
-
-        .certificate-link {
             margin-left: auto;
-            padding: 3px 10px;
-            border-radius: 6px;
-            background: #6c757d;
-            color: white;
-            font-size: 0.85em;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s ease;
-        }
-        
-        .certificate-link:hover {
-            background: #5a6268;
+            padding-left: 10px;
         }
 
-        /* 모바일 최적화 (반응형 셋팅) */
+        .action-link {
+            padding: 3px 10px;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 0.85em;
+            font-weight: 600;
+            line-height: 1.6;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .action-link--paper {
+            background-color: var(--color-paper);
+        }
+
+        .action-link--paper:hover {
+            background-color: var(--color-paper-hover);
+        }
+
+        .action-link--slides {
+            background-color: var(--color-slides);
+        }
+
+        .action-link--slides:hover {
+            background-color: var(--color-slides-hover);
+        }
+
+        .action-link--certificate {
+            margin-left: auto;
+            background-color: var(--color-certificate);
+        }
+
+        .action-link--certificate:hover {
+            background-color: var(--color-certificate-hover);
+        }
+
         @media (max-width: 768px) {
-            .container {
+            body {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+
+            .page-layout {
                 flex-direction: column;
                 gap: 30px;
             }
+
             .sidebar {
                 max-width: 100%;
                 margin-bottom: 20px;
             }
-            .contact-links {
+
+            .contact-list {
                 text-align: center;
             }
-        }
 
-        /* 학력 섹션 스타일 */
-        .edu-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .edu-item {
-            margin-bottom: 28px;
-        }
-        
-        .edu-details {
-            margin-left: 0;
-        }
-        
-        .edu-date {
-            font-size: 16px;
-            color: #666;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
+            .publication-meta {
+                flex-wrap: wrap;
+                row-gap: 8px;
+            }
 
-        .edu-location {
-            color: #777;
-            font-size: 0.95em;
-        }
-        
-        .edu-degree {
-            font-size: 16px;
-            font-weight: 600;
-            color: #111;
-            margin-left: 20px;
-        }
-        
-        .edu-gpa {
-            font-size: 14px;
-            color: #666;
-            margin-left: 20px;
-            margin-top: 3px;
+            .publication-actions {
+                width: 100%;
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+            .action-link--certificate {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
+
 <body>
+    <div class="page-layout">
+        <aside class="sidebar" aria-label="Profile">
+            <img
+                class="profile-image"
+                src="sjcho.jpg"
+                alt="Profile Picture"
+            >
 
-    <div class="container">
-        
-        <!-- 왼쪽 사이드바 (내 프로필) -->
-        <div class="sidebar">
-            <!-- 프로필 사진 -->
-            <img src="sjcho.jpg" alt="Profile Picture" class="profile-img">
-            <h1>Seongjoon Cho</h1>
-            <div class="sub-title">Master Student <br> in Kyung Hee University</div>
-            
-            <ul class="contact-links">
-                <li>📩 Email: <a href="mailto:csj0725@khu.ac.kr">csj0725@khu.ac.kr</a></li>
-                <li>💼 LinkedIn: <a href="https://linkedin.com/in/seongjoon-cho-4aa553304" target="_blank">Seongjoon Cho</a></li>
-                <li>📖 Google Scholar: <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=VKnA7OEAAAAJ" target="_blank">Seongjoon Cho</a></li>
+            <h1 class="profile-name">Seongjoon Cho</h1>
+
+            <div class="profile-subtitle">
+                Master Student <br>
+                in Kyung Hee University
+            </div>
+
+            <ul class="contact-list">
+                <li>
+                    📩 Email:
+                    <a href="mailto:csj0725@khu.ac.kr">
+                        csj0725@khu.ac.kr
+                    </a>
+                </li>
+                <li>
+                    💼 LinkedIn:
+                    <a
+                        href="https://linkedin.com/in/seongjoon-cho-4aa553304"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Seongjoon Cho
+                    </a>
+                </li>
+                <li>
+                    📖 Google Scholar:
+                    <a
+                        href="https://scholar.google.com/citations?pli=1&amp;authuser=1&amp;user=VKnA7OEAAAAJ"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Seongjoon Cho
+                    </a>
+                </li>
             </ul>
-        </div>
+        </aside>
 
-        <!-- 오른쪽 본문 내용 -->
-        <div class="main-content">
-            
-            <!-- 자기소개 섹션 -->
-            <section id="about">
-                <h2 style="color: #1e3a8a;">About Me 🧑‍💻</h2>
+        <main class="main-content">
+            <section id="about" class="content-section">
+                <h2 class="section-title">About Me 🧑‍💻</h2>
+
                 <p>
                     Welcome to my homepage! I am currently a Master's student in the Department of Semiconductor Engineering at Kyung Hee University, where I am advised by <strong>Prof. Seungkyu Choi</strong> in the
-                    <a href="https://acalabys.github.io/" target="_blank" style="color: #0066cc; font-weight: bold; text-decoration: none;">ACA LAB</a>.
+                    <a
+                        class="lab-link"
+                        href="https://acalabys.github.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >ACA LAB</a>.
                 </p>
 
-                <p>I am interested in co-optimizing hardware and algorithms to design low-latency, energy-efficient computing systems for AI and data-intensive applications. My research focuses on the following topics:</p>
+                <p>
+                    I am interested in co-optimizing hardware and algorithms to design low-latency, energy-efficient computing systems for AI and data-intensive applications. My research focuses on the following topics:
+                </p>
 
-                <!-- 세부 연구 주제 레이아웃 -->
-                <div style="
-                    margin-top: 25px;
-                    padding: 22px 24px;
-                    background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
-                    border: 1px solid #d8dde3;
-                    border-radius: 14px;
-                    box-shadow:
-                        0 12px 30px rgba(0,0,0,0.08),
-                        0 3px 8px rgba(0,0,0,0.05);
-                ">
-                    <h3 style="margin-top: 0; font-size: 16px; color: #111; border-left: 4px solid #e60000; padding-left: 10px; margin-bottom: 15px;">Research Interests</h3>
-                
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <!-- 주제 1 -->
-                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                            <span style="color: #e60000; margin-right: 10px; font-weight: bold;">•</span>
+                <div class="research-card">
+                    <h3 class="research-card-title">Research Interests</h3>
+
+                    <ul class="research-list">
+                        <li class="research-item">
+                            <span class="research-bullet" aria-hidden="true">•</span>
                             <div>
-                                <strong style="color: #111; display: block; font-size: 15px;">Hardware-Friendly Algorithm Optimization</strong>
-                                <span style="color: #555; font-size: 14px;">Quantization, Algorithm Restructuring</span>
+                                <strong class="research-topic">
+                                    Hardware-Friendly Algorithm Optimization
+                                </strong>
+                                <span class="research-description">
+                                    Quantization, Algorithm Restructuring
+                                </span>
                             </div>
                         </li>
-                
-                        <!-- 주제 2 -->
-                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                            <span style="color: #e60000; margin-right: 10px; font-weight: bold;">•</span>
+
+                        <li class="research-item">
+                            <span class="research-bullet" aria-hidden="true">•</span>
                             <div>
-                                <strong style="color: #111; display: block; font-size: 15px;">Specialized Hardware Accelerators</strong>
-                                <span style="color: #555; font-size: 14px;">RTL Design for AI/Vector Search Acceleration</span>
+                                <strong class="research-topic">
+                                    Specialized Hardware Accelerators
+                                </strong>
+                                <span class="research-description">
+                                    RTL Design for AI/Vector Search Acceleration
+                                </span>
                             </div>
                         </li>
-                
-                        <!-- 주제 3 -->
-                        <li style="margin-bottom: 0; display: flex; align-items: flex-start;">
-                            <span style="color: #e60000; margin-right: 10px; font-weight: bold;">•</span>
+
+                        <li class="research-item">
+                            <span class="research-bullet" aria-hidden="true">•</span>
                             <div>
-                                <strong style="color: #111; display: block; font-size: 15px;">Memory-Centric Architectures</strong>
-                                <span style="color: #555; font-size: 14px;">Compute Express Link (CXL), Processing Near-Memory (PNM), In-Storage Processing (ISP)</span>
+                                <strong class="research-topic">
+                                    Memory-Centric Architectures
+                                </strong>
+                                <span class="research-description">
+                                    Compute Express Link (CXL), Processing Near-Memory (PNM), In-Storage Processing (ISP)
+                                </span>
                             </div>
                         </li>
                     </ul>
                 </div>
-                
             </section>
 
-            <!-- 학력 섹션 -->
-            <section id="education">
-                <h2 style="color: #1e3a8a;">Education 🎓</h2>
-            
-                <ul class="edu-list">
-            
-                    <li class="edu-item">
-                        <div class="edu-details">
-                            <div class="edu-date">Sep. 2024 – Aug. 2026</div>
-            
-                            <div class="edu-degree">
-                                M.S. in Semiconductor Engineering, Kyung Hee University
-                                <span class="edu-location">(Yong-in, South Korea)</span>
-                            </div>
-            
-                            <div class="edu-gpa">
-                                GPA: 4.34 / 4.50
-                            </div>
+            <section id="education" class="content-section">
+                <h2 class="section-title">Education 🎓</h2>
+
+                <ul class="education-list">
+                    <li class="education-item">
+                        <div class="education-date">
+                            Sep. 2024 – Aug. 2026
+                        </div>
+
+                        <div class="education-degree">
+                            M.S. in Semiconductor Engineering, Kyung Hee University
+                            <span class="education-location">
+                                (Yong-in, South Korea)
+                            </span>
+                        </div>
+
+                        <div class="education-gpa">
+                            GPA: 4.34 / 4.50
                         </div>
                     </li>
-            
-                    <li class="edu-item">
-                        <div class="edu-details">
-                            <div class="edu-date">Mar. 2018 – Feb. 2024</div>
-            
-                            <div class="edu-degree">
-                                B.S. in Electronic Engineering, Kyung Hee University
-                                <span class="edu-location">(Yong-in, South Korea)</span>
-                            </div>
-            
-                            <div class="edu-gpa">
-                                GPA: 4.21 / 4.50
-                            </div>
+
+                    <li class="education-item">
+                        <div class="education-date">
+                            Mar. 2018 – Feb. 2024
+                        </div>
+
+                        <div class="education-degree">
+                            B.S. in Electronic Engineering, Kyung Hee University
+                            <span class="education-location">
+                                (Yong-in, South Korea)
+                            </span>
+                        </div>
+
+                        <div class="education-gpa">
+                            GPA: 4.21 / 4.50
                         </div>
                     </li>
-            
                 </ul>
             </section>
 
-            <!-- 새 소식 섹션 -->
-            <!-- <section id="news">
-                <h2>News</h2>
-                <ul class="news-list">
-                    <li><span class="news-date">[2026. 07]</span> 대표 학회 CVPR 2026에 논문이 한 채택되었습니다! 🎉</li>
-                    <li><span class="news-date">[2026. 03]</span> 네이버 웹툰 AI 인턴십 연구원으로 출근을 시작했습니다.</li>
-                    <li><span class="news-date">[2025. 11]</span> 인공지능 경진대회에서 우수상을 수상하였습니다.</li>
-                </ul>
-            </section> -->
+            <section id="publications" class="content-section">
+                <h2 class="section-title">Publications 📚</h2>
 
-            <!-- 대표 연구/프로젝트 섹션 -->
-            <section id="publications">
-                <h2 style="color: #1e3a8a;">Publications 📚</h2>
-
-                <div class="pub-item">
-                    <p class="pub-title">
+                <article class="publication-item">
+                    <p class="publication-title">
                         FALCON: A CORDIC-based FlashAttention Accelerator for On-Device Long-Context LLM Inference
                     </p>
-                    
-                    <p class="pub-authors">
-                        Junyoung Park, <span class="me">Seongjoon Cho</span>, Seungkyu Choi
+
+                    <p class="publication-authors">
+                        Junyoung Park,
+                        <span class="me">Seongjoon Cho</span>,
+                        Seungkyu Choi
                     </p>
-                
-                    <p class="pub-venue">
-                        <span>45th IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2026</span>
-                
-                        <span class="pub-badge pub-badge-conf">
+
+                    <p class="publication-meta">
+                        <span class="publication-venue">
+                            45th IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2026
+                        </span>
+
+                        <span class="publication-badge publication-badge--conference">
                             Accepted
                         </span>
-                
-                        <!-- <a class="paper-link"
-                           href="https://dac.com/2026/program"
-                           target="_blank">
-                            Paper
-                        </a> -->
                     </p>
-                
-                </div>
+                </article>
 
-                <div class="pub-item">
-                    <p class="pub-title">
+                <article class="publication-item">
+                    <p class="publication-title">
                         MeltKV: Memory-Aligned KV Cache Compression via Variable-Bit Packed Vector Quantization for Long-Context LLMs
                     </p>
-                    
-                    <p class="pub-authors">
-                        Jiyun Han, <span class="me">Seongjoon Cho</span>, Seungkyu Choi
+
+                    <p class="publication-authors">
+                        Jiyun Han,
+                        <span class="me">Seongjoon Cho</span>,
+                        Seungkyu Choi
                     </p>
-                
-                    <p class="pub-venue">
-                        <span>45th IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2026</span>
-                
-                        <span class="pub-badge pub-badge-conf">
+
+                    <p class="publication-meta">
+                        <span class="publication-venue">
+                            45th IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2026
+                        </span>
+
+                        <span class="publication-badge publication-badge--conference">
                             Accepted
                         </span>
-                
-                        <!-- <a class="paper-link"
-                           href="https://dac.com/2026/program"
-                           target="_blank">
-                            Paper
-                        </a> -->
                     </p>
-                
-                </div>
-                
-                <div class="pub-item">
-                    <p class="pub-title">
+                </article>
+
+                <article class="publication-item">
+                    <p class="publication-title">
                         BAGS: A Bit-Partitioned Quantization-Aware Architecture for Accelerating Graph-based Approximate Nearest Neighbor Search
                     </p>
-                    
-                    <p class="pub-authors">
-                        <span class="me">Seongjoon Cho</span>, Junyoung Park, Minje Park, Seungkyu Choi
+
+                    <p class="publication-authors">
+                        <span class="me">Seongjoon Cho</span>,
+                        Junyoung Park, Minje Park, Seungkyu Choi
                     </p>
-                
-                    <p class="pub-venue">
-                        <span>Journal of Systems Architecture (JSA), 2026</span>
-                
-                        <span class="pub-badge pub-badge-journal">
+
+                    <p class="publication-meta">
+                        <span class="publication-venue">
+                            Journal of Systems Architecture (JSA), 2026
+                        </span>
+
+                        <span class="publication-badge publication-badge--journal">
                             SCIE · Q1
                         </span>
 
-                        <span class="pub-links">
-                            <a class="paper-link"
-                               href="https://doi.org/10.1016/j.sysarc.2026.103897"
-                               target="_blank">
+                        <span class="publication-actions">
+                            <a
+                                class="action-link action-link--paper"
+                                href="https://doi.org/10.1016/j.sysarc.2026.103897"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Paper
                             </a>
                         </span>
                     </p>
-                
-                </div>
+                </article>
 
-                <div class="pub-item">
-                    <p class="pub-title">
+                <article class="publication-item">
+                    <p class="publication-title">
                         LOHA: A Latency-Optimized CPU-Storage Hybrid Architecture for Billion-Scale Graph-based Vector Similarity Search
                     </p>
-                    
-                    <p class="pub-authors">
-                        <span class="me">Seongjoon Cho</span>, Junyoung Park, Donghyun Kang, Moohyeon Nam, Hongchan Roh, Se-Hyun Yang, Moo-Kyoung Chung, Seungkyu Choi
+
+                    <p class="publication-authors">
+                        <span class="me">Seongjoon Cho</span>,
+                        Junyoung Park, Donghyun Kang, Moohyeon Nam, Hongchan Roh,
+                        Se-Hyun Yang, Moo-Kyoung Chung, Seungkyu Choi
                     </p>
-                
-                    <p class="pub-venue">
-                        <span>63rd ACM/IEEE Design Automation Conference (DAC), 2026</span>
-                
-                        <span class="pub-badge pub-badge-conf">
+
+                    <p class="publication-meta">
+                        <span class="publication-venue">
+                            63rd ACM/IEEE Design Automation Conference (DAC), 2026
+                        </span>
+
+                        <span class="publication-badge publication-badge--conference">
                             Acceptance Ratio=22.3%
                         </span>
-                
-                        <span class="pub-links">
-                            <a class="paper-link"
-                               href="https://dac.com/2026/program"
-                               target="_blank">
+
+                        <span class="publication-actions">
+                            <a
+                                class="action-link action-link--paper"
+                                href="https://dac.com/2026/program"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Paper
                             </a>
-                    
-                            <a class="slide-link"
-                               href="1560FINAL.pdf"
-                               target="_blank">
+
+                            <a
+                                class="action-link action-link--slides"
+                                href="1560FINAL.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Slides
                             </a>
                         </span>
                     </p>
-                
-                </div>
+                </article>
 
-                <div class="pub-item">
-                    <p class="pub-title">
+                <article class="publication-item">
+                    <p class="publication-title">
                         Q-VESA: Accelerating Quantization-Aware Vector Search for Fast Retrieval in Prompt Engineering
                     </p>
-                    
-                    <p class="pub-authors">
-                        <span class="me">Seongjoon Cho</span>, Junyoung Park, Donghyun Kang, Moohyeon Nam, Hongchan Roh, Moo-Kyoung Chung, Se-Hyun Yang, Seungkyu Choi
+
+                    <p class="publication-authors">
+                        <span class="me">Seongjoon Cho</span>,
+                        Junyoung Park, Donghyun Kang, Moohyeon Nam, Hongchan Roh,
+                        Moo-Kyoung Chung, Se-Hyun Yang, Seungkyu Choi
                     </p>
-                
-                    <p class="pub-venue">
-                        <span>IEEE Transactions on Computers (TC), 2026</span>
-                
-                        <span class="pub-badge pub-badge-journal">
+
+                    <p class="publication-meta">
+                        <span class="publication-venue">
+                            IEEE Transactions on Computers (TC), 2026
+                        </span>
+
+                        <span class="publication-badge publication-badge--journal">
                             SCIE · Major
                         </span>
 
-                        <span class="pub-links">
-                            <a class="paper-link"
-                               href="https://ieeexplore.ieee.org/document/11303310"
-                               target="_blank">
+                        <span class="publication-actions">
+                            <a
+                                class="action-link action-link--paper"
+                                href="https://ieeexplore.ieee.org/document/11303310"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Paper
                             </a>
                         </span>
                     </p>
-                
-                </div>
+                </article>
 
-                <div class="pub-item">
-                    <p class="pub-title">
+                <article class="publication-item">
+                    <p class="publication-title">
                         Accelerating Graph-based Vector Similarity Search via Bit-Partitioned Quantization Scheme
                     </p>
-                    
-                    <p class="pub-authors">
-                        <span class="me">Seongjoon Cho</span>, Junyoung Park, Seungkyu Choi
+
+                    <p class="publication-authors">
+                        <span class="me">Seongjoon Cho</span>,
+                        Junyoung Park, Seungkyu Choi
                     </p>
-                
-                    <p class="pub-venue">
-                        <span>Autumn Annual Conference of Institute of Electronics and Information Engineers (IEIE), 2025</span>
-                
-                        <span class="pub-badge pub-badge-conf">
+
+                    <p class="publication-meta">
+                        <span class="publication-venue">
+                            Autumn Annual Conference of Institute of Electronics and Information Engineers (IEIE), 2025
+                        </span>
+
+                        <span class="publication-badge publication-badge--conference">
                             Outstanding Paper Award
                         </span>
 
-                        <span class="pub-links">
-                            <a class="paper-link"
-                               href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12551358"
-                               target="_blank">
+                        <span class="publication-actions">
+                            <a
+                                class="action-link action-link--paper"
+                                href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12551358"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Paper
                             </a>
                         </span>
                     </p>
-                
-                </div>
-
+                </article>
             </section>
 
-            <section id="honors/awards">
-                <h2 style="color: #1e3a8a;">Honors/Awards 🏆</h2>
-                
-                <div class="pub-item">
-                    
-                    <p class="pub-title">
+            <section id="honors-awards" class="content-section">
+                <h2 class="section-title">Honors/Awards 🏆</h2>
+
+                <article class="publication-item">
+                    <p class="publication-title">
                         Outstanding Paper Award
                     </p>
 
-                    <p class="pub-authors">
+                    <p class="publication-authors">
                         Special Session on AI Semiconductor Digital Design
                     </p>
-                
-                    <p class="pub-venue">
-                        <span>Autumn Annual Conference of Institute of Electronics and Information Engineers (IEIE), 2025</span>
 
-                        <a class="certificate-link"
-                           href="Outstanding Paper Award.pdf"
-                           target="_blank">
+                    <p class="publication-meta">
+                        <span class="publication-venue">
+                            Autumn Annual Conference of Institute of Electronics and Information Engineers (IEIE), 2025
+                        </span>
+
+                        <a
+                            class="action-link action-link--certificate"
+                            href="Outstanding Paper Award.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Certificate
                         </a>
                     </p>
-                    
-                </div>
-
+                </article>
             </section>
-
-        </div>
+        </main>
     </div>
-
 </body>
 </html>
