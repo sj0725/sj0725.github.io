@@ -278,7 +278,7 @@
         .research-card-title {
             margin: 0 0 14px;
             color: var(--color-muted);
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 750;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -414,6 +414,12 @@
             font-weight: 450;
         }
 
+        .education-thesis {
+            margin: 3px 0 0;
+            color: var(--color-muted);
+            font-size: 13.5px;
+        }
+
         .education-gpa {
             margin: 3px 0 0;
             color: var(--color-muted);
@@ -435,11 +441,12 @@
             gap: 12px;
             margin: 0 0 15px;
             color: var(--color-primary);
+            font-family: var(--font-system);
             font-size: 16px;
-            font-weight: 800;
-            letter-spacing: 0.105em;
+            font-weight: 700;
+            letter-spacing: 0;
             line-height: 1.4;
-            text-transform: uppercase;
+            text-transform: none;
         }
 
         .publication-group-title::after {
@@ -489,20 +496,15 @@
 
         .publication-authors {
             margin: 0 0 7px;
-            color: #7b8797;
+            color: #697789;
             font-size: 14px;
             line-height: 1.55;
         }
 
         .publication-authors .me {
-            padding: 0 3px;
-            border-radius: 4px;
-            background-color: var(--color-primary-light);
             color: var(--color-primary);
             font-weight: 700;
             text-decoration: none;
-            box-decoration-break: clone;
-            -webkit-box-decoration-break: clone;
         }
 
         .publication-meta {
@@ -559,6 +561,8 @@
         }
 
         .publication-badge--journal {
+            align-self: center;
+            margin-top: 0;
             border-color: var(--color-journal-border);
             background-color: var(--color-journal-bg);
             color: var(--color-journal-text);
@@ -611,7 +615,7 @@
         .action-link--paper,
         .action-link--slides,
         .action-link--certificate {
-            background-color: #ffffff;
+            background-color: #eef1f4;
         }
 
         .action-link--certificate {
@@ -730,7 +734,7 @@
 
             .publication-group-title {
                 font-size: 12.5px;
-                letter-spacing: 0.08em;
+                letter-spacing: 0;
             }
         }
 
@@ -889,6 +893,10 @@
                             </span>
                         </div>
 
+                        <div class="education-thesis">
+                            Thesis Topic: Algorithm-Hardware Co-Design for Memory-Efficient Vector Similarity Search
+                        </div>
+
                         <div class="education-gpa">
                             GPA: 4.34 / 4.50
                         </div>
@@ -904,6 +912,10 @@
                             <span class="education-location">
                                 (Yong-in, South Korea)
                             </span>
+                        </div>
+
+                        <div class="education-thesis">
+                            Thesis Topic: A 10T-SRAM-Based Computing-In-Memory Architecture for Convolution Acceleration
                         </div>
 
                         <div class="education-gpa">
