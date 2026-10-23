@@ -53,7 +53,7 @@ window.SITE_CONTENT = {
       "links": [
         [
           "Paper",
-          "https://dac.com/2026"
+          "https://dl.acm.org/doi/10.1145/3770743.3804187"
         ],
         [
           "Slides",
